@@ -1,0 +1,11 @@
+**/.vs/
+**/bin/
+**/obj/
+**/TestResults/
+**/logs/*.txt
+!services/logs/.gitkeep
+.git/
+.github/
+.vscode/
+*.md
+.DS_Store
