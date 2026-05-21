@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  log-server:
+    build:
+      context: ./services
+      dockerfile: dockerfile
+    container_name: tcp-log-server
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./services/logs:/app/logs
+    environment:
+      - DOTNET_ENVIRONMENT=Production
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
